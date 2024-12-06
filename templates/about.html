@@ -1,0 +1,42 @@
+{% extends 'femicide.html' %}
+{% load static %}
+{% block body %}
+
+ <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>END FEMICIDE &GBV <br></span>
+        <h2>About Us</h2>
+        <p> We are committed to making a positive impact by raising awareness and driving change.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            <img src="{% static 'assets/img/fem.png' %}" class="img-fluid " style="margin-top: -30px" alt="About Us">
+          </div>
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3>Empowering Communities, Inspiring Change</h3>
+            <p class="fst-italic">
+              We are dedicated to fostering a better world through education, advocacy, and collaboration.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-all"></i> <span>Our mission is to educate and inspire individuals to take meaningful action.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>We create engaging content and initiatives to address critical social issues.</span></li>
+              <li><i class="bi bi-check2-all"></i> <span>Our team works tirelessly to ensure that everyone has access to resources and support.</span></li>
+            </ul>
+            <p>
+              Together, we can build a more inclusive and equitable society. Join us as we strive to make a difference, one step at a time.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+{% endblock %}

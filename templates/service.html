@@ -1,0 +1,95 @@
+{% extends 'femicide.html' %}
+{% load static %}
+{% block body %}
+ <section id="services" class="services section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span>END FEMICIDE & GBV </span>
+        <h2>Services</h2>
+        <p>We are working together to combat femicide and gender-based violence (GBV).</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-activity"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Community Awareness Campaigns</h3>
+              </a>
+              <p>We organize educational campaigns to raise awareness about the impact of femicide and GBV, empowering communities to take action.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-broadcast"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Online Support Network</h3>
+              </a>
+              <p>We provide an online platform where survivors of GBV can connect, share experiences, and access support services.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Workshops and Training</h3>
+              </a>
+              <p>Our workshops educate individuals and groups on identifying and preventing GBV, promoting safe and respectful relationships.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Legal Assistance</h3>
+              </a>
+              <p>We offer resources and referrals to legal aid for survivors seeking justice and protection against GBV.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-calendar4-week"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Helpline Support</h3>
+              </a>
+              <p>Our dedicated helpline offers confidential support and guidance to those affected by femicide and GBV.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-square-text"></i>
+              </div>
+              <a href="{% url 'service' %}" class="stretched-link">
+                <h3>Advocacy and Policy Change</h3>
+              </a>
+              <p>We advocate for stronger laws and policies to protect individuals from GBV and ensure accountability for perpetrators.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'femicide.html' %}
+{% load static %}
+{% block body %}
+
+  <form method="post" action="{% url 'stk' %}" style="
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(5, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+">
+  {% csrf_token %}
+
+    <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="
+      color: #E63946;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+  ">Donate to Save a Life</p>
+
+  <label for="phone" style="
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-family: Arial, sans-serif;
+  ">Phone Number :</label>
+  <input type="number" id="phone" name="phone" value="254" placeholder="Phone Number" style="
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+  ">
+
+  <label for="amount" style="
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-family: Arial, sans-serif;
+  ">Amount :</label>
+  <input type="text" id="amount" name="amount" placeholder="Amount" style="
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: Arial, sans-serif;
+  ">
+
+  <button type="submit" style="
+      background-color: #E63946;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease;
+      width: 50%;
+  ">Send </button>
+</form>
+
+
+{% endblock %}
