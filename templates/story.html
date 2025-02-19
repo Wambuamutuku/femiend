@@ -1,5 +1,22 @@
 {% extends 'femicide.html' %}
 {% load static %}
 {% block body %}
-	
+
+<h2 class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4" style="color: #E63946">Stories</h2>
+
+<div class="container">
+    <div class="story-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-content: center;">
+        {% for x in story %}
+        <div class="story-card" style="border: 1px solid #ddd; border-radius: 10px; padding: 15px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); word-wrap: break-word; background-color: #f9f9f9; transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; cursor: pointer;">
+            <img src="{{ x.image.url }}" alt="Uploaded Image" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform 0.3s ease-in-out;">
+            <p><strong>Name:</strong> {{ x.name }}</p>
+            <p><strong>Location:</strong> {{ x.location }}</p>
+            <p>{{ x.story }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
 {% endblock %}

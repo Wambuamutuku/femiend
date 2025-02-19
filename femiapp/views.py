@@ -1,19 +1,19 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from femiapp.forms import postForm
-from femiapp.models import Contact, Post, User
+from femiapp.models import Contact, Post, User, Admin
 from femiapp.credentials import MpesaAccessToken, LipanaMpesaPpassword
 from requests.auth import HTTPBasicAuth
-from django.contrib.sites import requests
+import requests
 import json
 
 
 # Create your views here.
 
 def delete(request,id):
-    poster=Post.objects.get(id=id)
-    poster.delete()
-    return redirect('/story')
+    message =Contact.objects.get(id=id)
+    message.delete()
+    return redirect('/show')
 def index(request):
     if request.method == 'POST':
         if User.objects.filter(
@@ -40,6 +40,7 @@ def contact(request):
     if request.method == "POST":
         mycontact=Contact(
             fullname = request.POST['name'],
+            phone= request.POST['phone'],
             email = request.POST['email'],
             subject = request.POST['subject'],
             message = request.POST['message'],
@@ -81,9 +82,10 @@ def register(request):
         return render(request,'register.html')
 
 
+
 def token(request):
-    consumer_key = '77bgGpmlOxlgJu6oEXhEgUgnu0j2WYxA'
-    consumer_secret = 'viM8ejHgtEmtPTHd'
+    consumer_key = 'jKOHoU9BPhN4irqozAY4NCIAW5Y4b6tVvYjXRx0pGsyTZJNv'
+    consumer_secret = '6mQvRzDoNtqeTkfQLC24A6rg1jWwAjtnb9ypNXvnabWjcHuD1CzNTlwA4oZu2nVz'
     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
 
     r = requests.get(api_URL, auth=HTTPBasicAuth(
@@ -95,7 +97,6 @@ def token(request):
 
 def pay(request):
    return render(request, 'pay.html')
-
 
 
 
@@ -120,4 +121,21 @@ def stk(request):
             "TransactionDesc": "Web Development Charges"
         }
         response = requests.post(api_url, json=request, headers=headers)
-        return HttpResponse("Success")
+        return HttpResponse("confirm your Mpesa PIN to complete Donation")
+
+def login2(request):
+    return render(request,'login2.html')
+
+def show(request):
+    messages = Contact.objects.all()
+    if request.method == "POST":
+        if Admin.objects.filter(
+                username=request.POST['username'],
+                password=request.POST['password']
+        ).exists():
+            return render(request, 'show.html', {'message': messages})
+        else:
+            return render(request,'login2.html')
+    else:
+        return render(request, 'login2.html')
+

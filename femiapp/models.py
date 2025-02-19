@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Contact(models.Model):
     fullname = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100,default='07-0000-0000')
     email = models.EmailField()
     subject = models.CharField(max_length=50)
     message = models.TextField()
@@ -26,3 +27,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.name
+
+class Admin(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.username

@@ -8,20 +8,23 @@ class postForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'image': forms.ClearableFileInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-lg',
                 'accept': 'image/*',
             }),
             'name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Enter your name',
+                'class': 'form-control form-control-lg',
+                'placeholder': 'Enter your full name',
+
             }),
             'location': forms.TextInput(attrs={
-                'class': 'form-control',
+                'class': 'form-control form-control-lg',
                 'placeholder': 'Enter your location',
+
             }),
             'story': forms.Textarea(attrs={
-                'class': 'form-control',
-                'placeholder': 'Share your story...',
-                'rows': 5,
+                'class': 'form-control form-control-lg',
+                'placeholder': 'Share your story with us here...',
+                'rows': 6,
+
             }),
         }
